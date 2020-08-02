@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :teddies, only: [:index, :show]
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
+    resource :qrcode, only: [:show], module: 'orders'
   end
+
+  resource :qrcode, only: [:show]
 
 mount StripeEvent::Engine, at: '/stripe-webhooks'
 

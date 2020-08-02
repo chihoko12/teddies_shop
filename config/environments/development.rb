@@ -50,6 +50,7 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = false
+  config.hosts << /[a-z0-9.]+\.ngrok\.io/
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
